@@ -1,6 +1,6 @@
 {
     "genres": {
         "all":"/api/genres",
-        "param":"/api/genres:genre"
+        "param":"/api/genres/:genreId"
     }
 }
