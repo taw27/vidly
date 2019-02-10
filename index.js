@@ -7,7 +7,8 @@ const app= express();
 app.use(express.json());
 const port= process.env.PORT || 3000;
 
-const movieGenres=[{id: 1, name: 'action'}, // dummy data
+const movieGenres=[
+  {id: 1, name: 'action'}, // dummy data
   {id: 2, name: 'comedy'},
   {id: 3, name: 'thriller'},
 ];
