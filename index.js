@@ -6,8 +6,9 @@ const app= express();
 const genresRouter= require('./routes/genres')
 const port= process.env.PORT || config.get("Genres.port");
 
-app.use(express.json());
+app.use(express.json());//middlewares
 app.use(helmet());
 app.use('/genres', genresRouter);
+
 app.listen(port);
 
