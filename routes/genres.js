@@ -12,7 +12,7 @@ router.get('/', (req, res)=>{
     return res.send(movieGenres);
 });
 
-router.get('/:genre', (req, res)=>{
+router.get('/:genreId', (req, res)=>{
     const genre= getGenrebyId(req.params.genreId);
     return genre? res.send(genre): res.status(404).send("Genre Not Found");
 });
@@ -30,17 +30,17 @@ router.post('/',(req, res)=>{
     }
 });
 
-router.put('/:genre',(req, res)=>{
+router.put('/:genreId',(req, res)=>{
     const {error, value} = validateGenre(req.body);
 
     if(error) return res.status(400).send(error.details[0].message);
 
-    const genre= getGenrebyName(req.params.genreId);
+    const genre= getGenrebyId(req.params.genreId);
     if(!genre) return res.status(400).send('Genre does not exist');
 
     genre.name= value.name;
 
-    return  res.status(200).send(value);
+    return  res.status(200).send(genre);
 });
 
 
