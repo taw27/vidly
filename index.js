@@ -8,7 +8,7 @@ const port= process.env.PORT || config.get("Genres.port");
 
 app.use(express.json());//middlewares
 app.use(helmet());
-app.use('/genres', genresRouter);
+app.use('/api/genres', genresRouter);
 
 app.listen(port);
 
