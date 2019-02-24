@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let genresSchema = new Schema(
     {
-        name: { type: String, required: true, minlength: 3 },
+        name: { type: String, required: [ true, 'genre name is required' ], minlength: 3, toLowerCase: true },
         movies: [ String ]
     }
 );
