@@ -9,10 +9,10 @@ const port= process.env.PORT || config.get("Genres.port");
 
 app.use(express.json());//middlewares
 app.use(helmet());
-mongoose.connect('mongodb://localhost/playground', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/genres', {useNewUrlParser: true})
   .then(()=> console.log('Connected to MongoDB...'))
   .catch(err=> console.error('could not connect to the database', err));
-  
+
 app.use('/api/genres', genresRouter);
 
 app.listen(port);
