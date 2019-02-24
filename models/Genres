@@ -1,0 +1,11 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+let genresSchema = new Schema(
+    {
+        name: { type: String, required: true, minlength: 3 },
+        movies: [ String ]
+    }
+);
+
+module.exports = mongoose.model('Genres', genresSchema);
