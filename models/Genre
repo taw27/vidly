@@ -8,4 +8,4 @@ let genresSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model('Genres', genresSchema);
+module.exports = mongoose.model('Genre', genresSchema);
